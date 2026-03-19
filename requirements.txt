@@ -1,7 +1,7 @@
 # PV Simulation Agent — Python-Abhängigkeiten
 
-# MCP SDK (Model Context Protocol Server)
-mcp>=1.0.0
+# MCP SDK (FastMCP — High-Level Python Framework)
+fastmcp>=3.0.0
 
 # HTTP Client für PV Simulation Backend
 httpx>=0.27.0
