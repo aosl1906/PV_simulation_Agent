@@ -74,9 +74,13 @@ async def get_json(endpoint: str) -> dict:
 async def check_backend_health() -> bool:
     """Prüft ob das PV Simulation Backend erreichbar ist."""
     try:
-        result = await get_json("/")
-        logger.info(f"Backend erreichbar: {result.get('message', 'OK')}")
-        return True
+        url = f"{get_backend_url()}/"
+        async with httpx.AsyncClient(timeout=httpx.Timeout(5.0)) as client:
+            response = await client.get(url)
+            healthy = response.status_code == 200
+            if healthy:
+                logger.info(f"Backend erreichbar (Status {response.status_code})")
+            return healthy
     except Exception as e:
         logger.warning(f"Backend nicht erreichbar: {e}")
         return False
