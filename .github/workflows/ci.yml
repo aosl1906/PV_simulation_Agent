@@ -1,0 +1,49 @@
+name: CI Pipeline
+
+# Trigger conditions
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test-and-lint:
+    runs-on: ubuntu-latest
+    
+    # SETUP: Definiere hier die Umgebung für deinen Tech-Stack
+    # Entsprechen den lokalen Workflows /check_syntax und /run_tests
+    steps:
+    - uses: actions/checkout@v4
+    
+    # -- BEISPIEL NODE.JS --
+    # 1. Setup Tech-Stack
+    # - name: Use Node.js
+    #   uses: actions/setup-node@v4
+    #   with:
+    #     node-version: '20.x'
+    #     cache: 'npm'
+        
+    # 2. Dependencies installieren
+    # - name: Install Dependencies
+    #   run: npm ci
+
+    # 3. Syntax Check ausführen (lokal: /check_syntax)
+    # - name: Linting
+    #   run: npm run lint
+        
+    # 4. Tests ausführen (lokal: /run_tests)
+    # - name: Run Tests
+    #   run: npm run test
+
+    # -- BEISPIEL PYTHON --
+    # - name: Set up Python
+    #   uses: actions/setup-python@v5
+    #   with:
+    #     python-version: '3.11'
+    # - name: Install deps
+    #   run: pip install -r requirements.txt pytest ruff
+    # - name: Lint with ruff
+    #   run: ruff check .
+    # - name: Test with pytest
+    #   run: pytest tests/

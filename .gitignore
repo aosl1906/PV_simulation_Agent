@@ -1,0 +1,73 @@
+# Logs & Debug-Artefakte
+*.log
+*_debug.log
+crash*.txt
+diag_out.txt
+
+# Umgebungsvariablen (NIEMALS committen!)
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Betriebssystem
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs & Editoren
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+venv/
+.venv/
+env/
+htmlcov/
+.coverage
+.tox/
+
+# Node / JavaScript
+node_modules/
+dist/
+.next/
+.nuxt/
+.svelte-kit/
+.output/
+coverage/
+.turbo/
+
+# Build-Artefakte (Backend)
+backend/dist/
+backend/build/
+backend/dist_exe/
+
+# Einmalige Migrations-Skripte (nach Verwendung löschen!)
+fix_*.py
+migrate_*.js
+seed_*.py
+
+# Temporäre Dateien
+*.tmp
+*.temp
+tmp/
+
+# Zertifikate & Secrets
+*.pem
+*.key
+*.cert
